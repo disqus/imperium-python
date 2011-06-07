@@ -13,5 +13,5 @@ Usage::
         'content': 'Hello world!',
     })
 
-    if response['spam']['label'] == 'spam':
+    if response['spam']['label'] == 'spam' and float(response['spam']['confidence_score]) >= 0.75:
         print "Uh oh, it's spam!"
