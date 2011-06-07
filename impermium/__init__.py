@@ -51,7 +51,8 @@ class ImpermiumAPI(object):
         conn = httplib.HTTPConnection(self.HOST)
         
         conn.request(http_method, path, simplejson.dumps(params), {
-            'User-Agent': 'impermium-python/%s' % __version__
+            'User-Agent': 'impermium-python/%s' % __version__,
+            'Content-Type': 'application/json',
         })
 
         response = conn.getresponse()
