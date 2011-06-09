@@ -34,7 +34,7 @@ class APIError(Exception):
         return '%s: %s' % (self.code, self.message)
 
 class ImpermiumAPI(object):
-    HOST = 'impermium.com'
+    HOST = 'api.impermium.com'
     
     def __init__(self, api_key, version='2.0'):
         self.api_key = api_key
