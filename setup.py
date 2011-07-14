@@ -17,7 +17,7 @@ class mytest(test):
 
 setup(
     name='impermium',
-    version='0.1',
+    version='0.2',
     author='David Cramer',
     author_email='dcramer@gmail.com',
     url='http://github.com/disqus/impermium-python',
