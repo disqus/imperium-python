@@ -1,23 +1,10 @@
 #!/usr/bin/env python
 
-try:
-    from setuptools import setup, find_packages
-    from setuptools.command.test import test
-except ImportError:
-    from ez_setup import use_setuptools
-    use_setuptools()
-    from setuptools import setup, find_packages
-    from setuptools.command.test import test
-
-
-class mytest(test):
-    def run(self, *args, **kwargs):
-        from runtests import runtests
-        runtests()
+from setuptools import setup, find_packages
 
 setup(
     name='impermium',
-    version='0.2',
+    version='0.3',
     author='David Cramer',
     author_email='dcramer@gmail.com',
     url='http://github.com/disqus/impermium-python',
@@ -27,9 +14,12 @@ setup(
     install_requires=[
         'simplejson',
     ],
-    test_suite = 'impermium.tests',
+    tests_require=[
+        'mock',
+        'unittest2',
+    ],
+    test_suite='unittest2.collector',
     include_package_data=True,
-    cmdclass={"test": mytest},
     classifiers=[
         'Framework :: Django',
         'Intended Audience :: Developers',

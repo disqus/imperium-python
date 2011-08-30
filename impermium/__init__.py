@@ -40,14 +40,15 @@ class ImpermiumAPI(object):
         self.api_key = api_key
         self.version = version
     
-    def request(self, http_method, type_, action, event_id, params={}):
-        path = '/%(type)s/%(action)s/%(version)s/%(api_key)s/%(event_id)s' % dict(
+    def request(self, http_method, type_, action, event_id=None, params={}):
+        path = '/%(type)s/%(action)s/%(version)s/%(api_key)s' % dict(
             type=type_,
             action=action,
             version=self.version,
             api_key=self.api_key,
-            event_id=event_id,
         )
+        if event_id:
+            path += '/%s' % (event_id,)
         conn = httplib.HTTPConnection(self.HOST)
         
         conn.request(http_method, path, simplejson.dumps(params), {
