@@ -69,18 +69,18 @@ class ImpermiumAPI(object):
         return data
     
     # Endpoints which check content
-    checkSignup = lambda s, x, d: s.request('POST', 'account', 'signup', x, d)
-    checkSignupAttempt = lambda s, x, d: s.request('POST', 'account', 'signup_attempt', x, d)
-    checkInvite = lambda s, x, d: s.request('POST', 'connection', 'invite', x, d)
-    checkInviteResponse = lambda s, x, d: s.request('POST', 'connection', 'invite_response', x, d)
-    checkBlogEntry = lambda s, x, d: s.request('POST', 'content', 'blog_entry', x, d)
-    checkChatMessage = lambda s, x, d: s.request('POST', 'content', 'chat_message', x, d)
-    checkChatroomMessage = lambda s, x, d: s.request('POST', 'content', 'chatroom_message', x, d)
-    checkComment = lambda s, x, d: s.request('POST', 'content', 'comment', x, d)
-    checkForumMessage = lambda s, x, d: s.request('POST', 'content', 'forum_message', x, d)
-    checkGeneric = lambda s, x, d: s.request('POST', 'content', 'generic', x, d)
-    checkMessage = lambda s, x, d: s.request('POST', 'content', 'message', x, d)
+    checkSignup = lambda s, *a, **k: s.request('POST', 'account', 'signup', *a, **k)
+    checkSignupAttempt = lambda s, *a, **k: s.request('POST', 'account', 'signup_attempt', *a, **k)
+    checkInvite = lambda s, *a, **k: s.request('POST', 'connection', 'invite', *a, **k)
+    checkInviteResponse = lambda s, *a, **k: s.request('POST', 'connection', 'invite_response', *a, **k)
+    checkBlogEntry = lambda s, *a, **k: s.request('POST', 'content', 'blog_entry', *a, **k)
+    checkChatMessage = lambda s, *a, **k: s.request('POST', 'content', 'chat_message', *a, **k)
+    checkChatroomMessage = lambda s, *a, **k: s.request('POST', 'content', 'chatroom_message', *a, **k)
+    checkComment = lambda s, *a, **k: s.request('POST', 'content', 'comment', *a, **k)
+    checkForumMessage = lambda s, *a, **k: s.request('POST', 'content', 'forum_message', *a, **k)
+    checkGeneric = lambda s, *a, **k: s.request('POST', 'content', 'generic', *a, **k)
+    checkMessage = lambda s, *a, **k: s.request('POST', 'content', 'message', *a, **k)
     
     # Endpoints which train with content
-    trainAnalyst = lambda s, x, d: s.request('POST', 'feedback', 'analyst', x, d)
-    trainEnduser = lambda s, x, d: s.request('POST', 'feedback', 'enduser', x, d)
+    trainAnalyst = lambda s, *a, **k: s.request('POST', 'feedback', 'analyst', *a, **k)
+    trainEnduser = lambda s, *a, **k: s.request('POST', 'feedback', 'enduser', *a, **k)

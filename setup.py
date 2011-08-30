@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='impermium',
-    version='0.3',
+    version='0.3.1',
     author='David Cramer',
     author_email='dcramer@gmail.com',
     url='http://github.com/disqus/impermium-python',
