@@ -38,7 +38,7 @@ class ImpermiumAPI(object):
     
     def __init__(self, api_key, version='2.0'):
         self.api_key = api_key
-        self.version = version
+        self.version = str(version)
     
     def request(self, http_method, type_, action, event_id=None, params={}):
         path = '/%(type)s/%(action)s/%(version)s/%(api_key)s' % dict(
@@ -84,3 +84,12 @@ class ImpermiumAPI(object):
     # Endpoints which train with content
     trainAnalyst = lambda s, *a, **k: s.request('POST', 'feedback', 'analyst', *a, **k)
     trainEnduser = lambda s, *a, **k: s.request('POST', 'feedback', 'enduser', *a, **k)
+
+    # API 3.0 endpoints
+    def trainAnalystComment(self, *args, **kwargs):
+        assert self.version == '3.0'
+        return self.request('POST', 'content/comment', 'analystfeedback', *args, **kwargs)
+
+    def trainEnduserComment(self, *args, **kwargs):
+        assert self.version == '3.0'
+        return self.request('POST', 'content/comment', 'userfeedback', *args, **kwargs)

@@ -1,0 +1,38 @@
+{
+    "rid" : 79898989,
+    "eid" : 1,
+    "etype" : 20,
+    "ts" : "20110208123409Z",
+    "spam" : {
+        "label" : "notspam",
+        "confidence" : "high",
+        "confidence_score" : 0.97,
+        "reason" : "" 
+    },
+    "porn" : {
+        "label" : "porn",
+        "confidence" : "high",
+        "confidence_score" : 0.89,
+        "reason" : "adult content",
+        "urls" : [
+            "www.dirtynasty.com",
+            "xxx.org" 
+        ] 
+    },
+    "profanity" : {
+        "label" : "profane",
+        "confidence_score" : "0.6",
+        "confidence" : "medium",
+        "reason" : "2+ block words",
+        "block_words_found" : [
+            "bi***",
+            "f***" 
+        ] 
+    },
+    "quality" : {
+        "iq_score": 0.99,
+        "label" : "low_quality",
+        "confidence" : "high",
+        "confidence_score" : "0.9" 
+    } 
+}
