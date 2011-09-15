@@ -2,18 +2,20 @@
 impermium
 ~~~~~~~~~
 
-from impermium import ImpermiumAPI
+:copyright: (c) 2011 DISQUS.
+:license: Apache License 2.0, see LICENSE for more details.
 
-impermium = ImpermiumAPI(api_key=api_key)
+>>> from impermium import ImpermiumAPI
+>>> impermium = ImpermiumAPI(api_key=api_key)
 
-response = impermium.checkComment(event_id, {
-    'uid_ref': '12341234',
-    'resource_url': 'http://example.com',
-    'content': 'Hello world!',
-})
+>>> response = impermium.checkComment(event_id, {
+>>>     'uid_ref': '12341234',
+>>>     'resource_url': 'http://example.com',
+>>>     'content': 'Hello world!',
+>>> })
 
-if response['spam']['label'] == 'spam':
-    print "Uh oh, it's spam!"
+>>> if response['spam']['label'] == 'spam':
+>>>     print "Uh oh, it's spam!"
 
 """
 try:
